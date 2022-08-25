@@ -5,7 +5,7 @@ interface FetchedBook {
 
 interface Book {
   title: string;
-  quantity: number | "one" | "two" | "three";
+  quantity: number;
 }
 
 export { Book, FetchedBook };
