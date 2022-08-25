@@ -1,7 +1,7 @@
 import { fetchBooks } from "./fetcher";
 import { generateBooks } from "../domain/book";
-import { printBooks } from "./printer";
 import { print } from "../infrastructure/runtimeEnvironment";
+import { printBooks } from "./printer";
 
 const app = () => printBooks(generateBooks(fetchBooks()), print);
 
