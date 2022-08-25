@@ -14,7 +14,7 @@ OO은 앞으로 부모님이 운영하시는 작은 서점에서 사용할 수 �
 | Moby Dick                        | one      |
 | Hitchhiker's guide to the galaxy | 42       |
 
-OO은 Lotus123의 저장 파일로부터 데이터를 가져와서(`infrastructure/externalService.ts`), 재고 수량(`quantity`)을 숫자로 변환하여 화면에 출력해보는(`infrastructure/runtimeEnvironment.ts`) 코드를 작성했다. 아래는 프로그램의 실행 결과다:
+OO은 Lotus123의 저장 파일로부터 데이터를 가져와서(`infrastructure/externalBooks.csv`), 재고 수량(`quantity`)을 숫자로 변환하여 화면에 출력해보는(`infrastructure/runtimeEnvironment.ts`) 코드를 작성했다. 아래는 프로그램의 실행 결과다:
 
 ```sh
 $ yarn start
