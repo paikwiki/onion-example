@@ -1,10 +1,10 @@
-import { print } from "../infrastructure/runtimeEnvironment";
 import { arrayMap } from "../typescript-util/array";
 import type { Book } from "../domain/schema";
+import type { Printable } from "./types";
 
-const printBooks = (books: Book[]) =>
+const printBooks = (books: Book[], printable: Printable) =>
   arrayMap(books, ({ title, quantity }) =>
-    print(`[${`Qty.${quantity}`.padEnd(6)}] TITLE: ${title} `)
+    printable(`[${`Qty.${quantity}`.padEnd(6)}] TITLE: ${title} `)
   );
 
 export { printBooks };

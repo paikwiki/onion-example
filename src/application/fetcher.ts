@@ -7,20 +7,18 @@ import type { FetchedBook } from "../domain/schema";
 const booksFilePath = path.join(process.cwd(), EXTERNAL_BOOKS_FILE_PATH);
 
 // TODO: fetchBooks() 리팩토링: 너무 많은 일을 담당하고 있음
-const fetchBooks = async () => {
+const fetchBooks = () => {
   const rawText = fs.readFileSync(booksFilePath, { encoding: "utf8" });
   const lines = arrayFilter(rawText.split("\n"), (item) => item.length > 0);
   const rawData = arrayMap(lines, (line) => line.split(","));
 
-  return Promise.resolve(
-    arrayMap(
-      rawData,
-      ([title, quantity]) =>
-        ({
-          title,
-          quantity: isNaN(parseInt(quantity)) ? quantity : parseInt(quantity),
-        } as FetchedBook)
-    )
+  return arrayMap(
+    rawData,
+    ([title, quantity]) =>
+      ({
+        title,
+        quantity: isNaN(parseInt(quantity)) ? quantity : parseInt(quantity),
+      } as FetchedBook)
   );
 };
 
