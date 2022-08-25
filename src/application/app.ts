@@ -1,4 +1,4 @@
-import { fetchBooks } from "../infrastructure/externalService";
+import { fetchBooks } from "./fetcher";
 import { generateBooks } from "../domain/book";
 import { printBooks } from "./printer";
 
