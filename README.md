@@ -12,7 +12,7 @@ OO는 앞으로 부모님이 운영하시는 작은 서점에서 사용할 수 �
 | -------------------------------- | -------- |
 | White Fang                       | two      |
 | Moby Dick                        | one      |
-| hitchhiker's guide to the galaxy | 42       |
+| Hitchhiker's guide to the galaxy | 42       |
 
 OO은 Lotus123의 저장 파일로부터 데이터를 가져와서(`infrasturucture/externalService.ts`), 재고 수량(`quantity`)을 숫자로 변환하여 화면에 출력해보는(`infrasturucture/runtimeEnvironment.ts`) 코드를 작성했다. 아래는 프로그램의 실행 결과다:
 
@@ -22,5 +22,5 @@ yarn run v1.22.18
 $ ts-node src/main.ts
 [Qty.2 ] TITLE: White Fang
 [Qty.1 ] TITLE: Moby Dick
-[Qty.42] TITLE: hitchhiker's guide to the galaxy
+[Qty.42] TITLE: Hitchhiker's guide to the galaxy
 ```
