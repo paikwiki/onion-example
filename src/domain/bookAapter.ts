@@ -1,9 +1,4 @@
-import type { Book } from "./schema";
-
-interface FetchedBook {
-  title: string;
-  quantity: number | "one" | "two" | "three";
-}
+import type { Book, FetchedBook } from "./schema";
 
 const quantityParser = (quantity: FetchedBook["quantity"]): number => {
   if (typeof quantity === "number") return quantity;
