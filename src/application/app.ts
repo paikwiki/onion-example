@@ -1,4 +1,4 @@
-import { generateBooks } from "../domain/book";
+import { bookGenerator } from "../domain/bookGenerator";
 import { print, read } from "../infrastructure/runtimeEnvironment";
 import { EXTERNAL_BOOKS_FILE_RELATIVE_PATH } from "./constants";
 import { fetcher } from "./fetcher";
@@ -10,7 +10,7 @@ const app: App = () => {
     fileRelativePath: EXTERNAL_BOOKS_FILE_RELATIVE_PATH,
     read,
   });
-  const books = generateBooks(fetchedBooks);
+  const books = bookGenerator(fetchedBooks);
 
   printer({ books, printable: print });
 };
