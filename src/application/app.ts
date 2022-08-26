@@ -1,8 +1,8 @@
-import { fetchBooks } from "./fetcher";
+import { fetcher } from "./fetcher";
 import { generateBooks } from "../domain/book";
 import { print } from "../infrastructure/runtimeEnvironment";
-import { printBooks } from "./printer";
+import { printer } from "./printer";
 
-const app = () => printBooks(generateBooks(fetchBooks()), print);
+const app = () => printer(generateBooks(fetcher()), print);
 
 export default app;
