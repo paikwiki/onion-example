@@ -1,8 +1,9 @@
 import { arrayMapper } from "../typescript-util/array";
 import { bookAdapter } from "./bookAdapter";
-import type { FetchedBook } from "./schema";
+import type { Book, FetchedBook } from "./schema";
 
-const bookGenerator = (fetchedBooks: FetchedBook[]) =>
+type BookGenerator = (fetchedBooks: FetchedBook[]) => Book[];
+const bookGenerator: BookGenerator = (fetchedBooks) =>
   arrayMapper(fetchedBooks, bookAdapter);
 
 export { bookGenerator };
