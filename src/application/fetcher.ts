@@ -1,15 +1,15 @@
 import { arrayFilter, arrayMap } from "../typescript-util/array";
 import { stringSplit } from "../typescript-util/string";
 import type { FetchedBook } from "../domain/schema";
-import type { Readable } from "./types";
+import type { ReadFunction } from "./types";
 
 type Fetcher = (param: {
   fileRelativePath: string;
-  read: Readable;
+  readFn: ReadFunction;
 }) => FetchedBook[];
-const fetcher: Fetcher = ({ fileRelativePath, read }) => {
+const fetcher: Fetcher = ({ fileRelativePath, readFn }) => {
   const lines = arrayFilter(
-    stringSplit(read(fileRelativePath), "\n"),
+    stringSplit(readFn(fileRelativePath), "\n"),
     (item) => item.length > 0
   );
   const rawData = arrayMap(lines, (line) => stringSplit(line, ","));

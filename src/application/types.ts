@@ -1,4 +1,4 @@
-type Printable = (text: string) => void;
-type Readable = (fileRelativePath: string) => string;
+type PrintFunction = (text: string) => void;
+type ReadFunction = (fileRelativePath: string) => string;
 
-export { Printable, Readable };
+export { PrintFunction, ReadFunction };

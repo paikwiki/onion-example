@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
-import type { Printable, Readable } from "../application/types";
+import type { PrintFunction, ReadFunction } from "../application/types";
 
-const print: Printable = (item: unknown) => console.log(item);
-const read: Readable = (fileRelativePath: string) =>
+const printToConsole: PrintFunction = (item: unknown) => console.log(item);
+const readFile: ReadFunction = (fileRelativePath: string) =>
   fs.readFileSync(path.join(process.cwd(), fileRelativePath), {
     encoding: "utf8",
   });
 
-export { print, read };
+export { printToConsole, readFile };
