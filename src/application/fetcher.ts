@@ -1,4 +1,4 @@
-import { arrayFilter, arrayMap } from "../typescript-util/array";
+import { arrayFilter, arrayMapper } from "../typescript-util/array";
 import { stringSplitter } from "../typescript-util/string";
 import type { FetchedBook } from "../domain/schema";
 import type { ReadFunction } from "./types";
@@ -12,9 +12,9 @@ const fetcher: Fetcher = ({ fileRelativePath, readFn }) => {
     stringSplitter(readFn(fileRelativePath), "\n"),
     (item) => item.length > 0
   );
-  const rawData = arrayMap(lines, (line) => stringSplitter(line, ","));
+  const rawData = arrayMapper(lines, (line) => stringSplitter(line, ","));
 
-  return arrayMap(
+  return arrayMapper(
     rawData,
     ([title, quantity]) =>
       ({
