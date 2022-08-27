@@ -4,12 +4,12 @@ import type { FetchedBook } from "../domain/schema";
 import type { ReadFunction } from "./types";
 
 type Fetcher = (param: {
-  fileRelativePath: string;
-  readFn: ReadFunction;
+  sourcePath: string;
+  readFunction: ReadFunction;
 }) => FetchedBook[];
-const fetcher: Fetcher = ({ fileRelativePath, readFn }) => {
+const fetcher: Fetcher = ({ sourcePath, readFunction }) => {
   const lines = arrayFilter(
-    stringSplitter(readFn(fileRelativePath), "\n"),
+    stringSplitter(readFunction(sourcePath), "\n"),
     (item) => item.length > 0
   );
   const rawData = arrayMapper(lines, (line) => stringSplitter(line, ","));

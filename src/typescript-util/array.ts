@@ -4,6 +4,6 @@ const arrayMapper: ArrayMapper = <T, U>(arr: T[], exec: (item: T) => U) =>
 
 type ArrayFilter = <T>(arr: T[], cond: (item: T) => boolean) => T[];
 const arrayFilter: ArrayFilter = <T>(arr: T[], cond: (item: T) => boolean) =>
-  arr.filter((item) => cond(item));
+  arr.filter(cond);
 
 export { arrayMapper, arrayFilter };

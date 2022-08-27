@@ -1,6 +1,7 @@
+type QuantityWrittenByWord = "one" | "two" | "three";
 interface FetchedBook {
   title: string;
-  quantity: number | "one" | "two" | "three";
+  quantity: number | QuantityWrittenByWord;
 }
 
 interface Book {
@@ -8,4 +9,4 @@ interface Book {
   quantity: number;
 }
 
-export { Book, FetchedBook };
+export { Book, FetchedBook, QuantityWrittenByWord};

@@ -7,12 +7,12 @@ import { printer } from "./printer";
 type App = () => void;
 const app: App = () => {
   const fetchedBooks = fetcher({
-    fileRelativePath: EXTERNAL_BOOKS_FILE_RELATIVE_PATH,
-    readFn: readFile,
+    sourcePath: EXTERNAL_BOOKS_FILE_RELATIVE_PATH,
+    readFunction: readFile,
   });
   const books = bookGenerator(fetchedBooks);
 
-  printer({ books, printFn: printToConsole });
+  printer({ books, printFunction: printToConsole });
 };
 
 export default app;
