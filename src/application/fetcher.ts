@@ -1,7 +1,7 @@
 import { arrayFilter, arrayMapper } from "../typescript-util/array";
 import { stringSplitter } from "../typescript-util/string";
 import type { FetchedBook } from "../domain/schema";
-import type { FetchFunction } from "./types";
+import type { FetchFunction } from "./runtimeInterfaces";
 
 type Fetcher = (param: {
   sourcePath: string;

@@ -24,3 +24,55 @@ $ ts-node src/main.ts
 [Qty.1 ] TITLE: Moby Dick
 [Qty.42] TITLE: Hitchhiker's guide to the galaxy
 ```
+
+## 구조
+
+```
++========================+
+| external               |
++========================+
+
+  +--------------------+
+  | externalBooks      |
+  +--------------------+
+
++========================+
+| infrastructure         |
++========================+
+
+  +--------------------+
+  | runtimeEnvironment |  application/runtimeInterfaces, node_modules
+  +--------------------+
+
++========================+
+| application            |
++========================+
+
+  +--------------------+
+  | app                |  domain/bookGenerator, fetcher, printer, constants, infrastructure/runtimeEnvironment
+  | fetcher            |  domain/schema runtimeInterfaces
+  | printer            |  domain/schema runtimeInterfaces
+  | constants          |
+  | runtimeInterfaces  |
+  +--------------------+
+
++========================+
+| domain                 |
++========================+
+
+  +--------------------+
+  | bookGenerator      |  schema, bookAdapter
+  | bookAdapter        |  schema
+  | schema             |
+  +--------------------+
+
+------------------------------------------
+
+    +------------------------+
+    | typescript-utils       |
+    +------------------------+
+    | array                  |
+    | string                 |
+    +------------------------+
+
+```
