@@ -1,4 +1,4 @@
 const EXTERNAL_BOOKS_FILE_RELATIVE_PATH =
-  "src/infrastructure/externalBooks.csv";
+  "src/external/externalBooks.csv";
 
 export { EXTERNAL_BOOKS_FILE_RELATIVE_PATH };
